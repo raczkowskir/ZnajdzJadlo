@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Znajdz Jadlo</string>
+    <string name="action_settings">Settings</string>
+    <string name="etPlace">Miejscowość</string>
+    <string name="etDish">Danie</string>
+    <string name="btnSearch">Wyszukaj</string>
+</resources>

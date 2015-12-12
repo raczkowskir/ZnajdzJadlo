@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/ibtnBack"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/gora"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:padding="1dp"
+        android:onClick="backToMain"/>
+
+    <WebView
+        android:id="@+id/wvResults"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ibtnBack"
+        android:onClick="openResult">
+
+    </WebView>
+
+</RelativeLayout>
