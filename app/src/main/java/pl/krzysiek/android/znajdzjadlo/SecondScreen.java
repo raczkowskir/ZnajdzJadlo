@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -24,7 +25,7 @@ public class SecondScreen extends Activity {
 
         ibtnBack = (ImageButton) findViewById(R.id.ibtnBack);
 
-        //metoda cofaj¹ca do ekranu glownego
+        //metoda cofajï¿½ca do ekranu glownego
         ibtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,6 +62,7 @@ public class SecondScreen extends Activity {
         thirdScreen.putExtra("wvResults", wvResults.getUrl().toString());
         startActivity(thirdScreen);
         finish();
+        Log.d("status", "dziala");
     }
 
 }
