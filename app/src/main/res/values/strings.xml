@@ -4,4 +4,14 @@
     <string name="etPlace">Miejscowość</string>
     <string name="etDish">Danie</string>
     <string name="btnSearch">Wyszukaj</string>
+
+    <string-array name="brew_array">
+        <item>Cappuccino</item>
+        <item>Espresso</item>
+        <item>Mocha</item>
+        <item>Caffè Americano</item>
+        <item>Cafe Zorro</item>
+
+    </string-array>
+
 </resources>
