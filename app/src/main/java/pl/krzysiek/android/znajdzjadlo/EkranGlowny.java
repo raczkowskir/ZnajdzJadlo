@@ -29,12 +29,12 @@ public class EkranGlowny extends Activity {
         etDish = (Spinner) findViewById(R.id.etDish);
 
         ArrayAdapter<CharSequence> staticAdapter =
-                ArrayAdapter.createFromResource(this, R.array.brew_array,android.R.layout.simple_spinner_item);
+                ArrayAdapter.createFromResource(this, R.array.meal_array,android.R.layout.simple_spinner_item);
 
-        // Specify the layout to use when the list of choices appears
+        // Określenie layoutu jaki ma byc uzyty kiedy pojawi sie rozwijana lista
         staticAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // Apply the adapter to the spinner
+        // ustawienie adaptera dla spinnera
         etDish.setAdapter(staticAdapter);
 
         btnSearch = (Button) findViewById(R.id.btnSearch);
@@ -46,7 +46,6 @@ public class EkranGlowny extends Activity {
                 Intent secondScreen = new Intent(getApplicationContext(), SecondScreen.class);
                 secondScreen.putExtra("etPlace", etPlace.getText().toString());
                 secondScreen.putExtra("etDish", etDish.getSelectedItem().toString());
-                Log.d("getPrompt: ", etDish.getSelectedItem().toString());
                 startActivity(secondScreen);
                 finish();
             }
