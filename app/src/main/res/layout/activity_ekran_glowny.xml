@@ -23,15 +23,15 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+    <Spinner
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:background="#eeeeee"
         android:textAllCaps="false"
         android:textSize="20sp"
-        android:textColorHint="#bdbdbd"
+
         android:paddingLeft="15dp"
-        android:hint="@string/etDish"
+
         android:id="@+id/etDish"
         android:layout_below="@+id/etPlace"
         android:layout_alignLeft="@+id/etPlace"
@@ -48,7 +48,8 @@
         android:text="@string/btnSearch"
         android:layout_below="@+id/etDish"
         android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"
-        android:onClick="searchDish" />
+        android:layout_marginTop="30dp"/>
+
+
 
 </RelativeLayout>
