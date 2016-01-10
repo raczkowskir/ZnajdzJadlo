@@ -7,20 +7,24 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
 public class LocationAddress {
-    private static final String TAG = "LocationAddress";
 
+// string potrzebny do debugowania
+    private static final String TAG = "LocationAddress";
+//metoda zamieniajaca współrzedne na nazwe miejscowości
     public static void getAddressFromLocation(final double latitude, final double longitude,
                                               final Context context, final Handler handler) {
+// nowy watek
         Thread thread = new Thread() {
             @Override
             public void run() {
+// obiekt klasy która moze operowac na wspórzednych
                 Geocoder geocoder = new Geocoder(context, Locale.getDefault());
+// string który docelowo bedzie zawieral nazwe miejscowosci ktora zostanie wyswietlona na ekranie
                 String result = null;
                 try {
                     List<Address> addressList = geocoder.getFromLocation(
@@ -28,12 +32,7 @@ public class LocationAddress {
                     if (addressList != null && addressList.size() > 0) {
                         Address address = addressList.get(0);
                         StringBuilder sb = new StringBuilder();
-                        //    for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
-                        //         sb.append(address.getAddressLine(i)).append("\n");
-                        //    }
-                        sb.append(address.getLocality()).append("\n");
-                        //  sb.append(address.getPostalCode()).append("\n");
-                        //   sb.append(address.getCountryName());
+                        sb.append(address.getLocality());
                         result = sb.toString();
                     }
                 } catch (IOException e) {
@@ -44,9 +43,6 @@ public class LocationAddress {
                     if (result != null) {
                         message.what = 1;
                         Bundle bundle = new Bundle();
-                       /* result = "Latitude: " + latitude + " Longitude: " + longitude +
-                                "\n\nAddress:\n" + result;
-                                */
 
                         bundle.putString("address", result);
                         message.setData(bundle);
