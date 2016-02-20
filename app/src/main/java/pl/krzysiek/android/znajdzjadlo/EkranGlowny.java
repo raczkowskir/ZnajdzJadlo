@@ -73,11 +73,16 @@ public class EkranGlowny extends Activity implements LocationListener {
         odswiez();
         lm.requestLocationUpdates(najlepszyDostawca, 1000, 1, this);
 
-
+//program wyrzuci wyjatek jezeli z jakiegos powodu nie bedzie mozliwe podanie naszej lokalizacji
+try {
 //tworzony jest obiekt klasy LocationAddress ktora odpowiada za zamiane współrzednych GPS na nazwe miejscowości
-        LocationAddress locationAddress = new LocationAddress();
-        locationAddress.getAddressFromLocation(loc.getLatitude(), loc.getLongitude(),
-                getApplicationContext(), new GeocoderHandler());
+    LocationAddress locationAddress = new LocationAddress();
+    locationAddress.getAddressFromLocation(loc.getLatitude(), loc.getLongitude(),
+            getApplicationContext(), new GeocoderHandler());
+}
+catch (NullPointerException a){
+    System.out.println("Cos sie wysypalo");
+}
     }
 
     // metody wymagane przez interface: LocationListener
