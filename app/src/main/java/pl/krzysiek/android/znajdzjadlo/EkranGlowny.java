@@ -79,6 +79,7 @@ try {
     LocationAddress locationAddress = new LocationAddress();
     locationAddress.getAddressFromLocation(loc.getLatitude(), loc.getLongitude(),
             getApplicationContext(), new GeocoderHandler());
+    System.out.println("Jak to sie wyswietla t jest git !!!" + loc.getLatitude()+ loc.getLongitude());
 }
 catch (NullPointerException a){
     System.out.println("Cos sie wysypalo");
