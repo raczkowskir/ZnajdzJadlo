@@ -49,6 +49,18 @@
         android:layout_below="@+id/etDish"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"/>
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:id="@+id/btnNearest"
+        android:background="@drawable/button_custom"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:text="@string/btnNearest"
+        android:layout_below="@+id/btnSearch"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
 
 
 

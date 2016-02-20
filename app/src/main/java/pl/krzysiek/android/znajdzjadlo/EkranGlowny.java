@@ -19,6 +19,7 @@ public class EkranGlowny extends Activity implements LocationListener {
 
 
     private Button btnSearch; //definicja buttona
+    private Button btnNearest;
     private EditText etPlace; //definicja edit text miejscowosc
     private Spinner etDish; //definicja edit text danie
 
@@ -59,7 +60,7 @@ public class EkranGlowny extends Activity implements LocationListener {
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent secondScreen = new Intent(getApplicationContext(), SecondScreen.class);
+                Intent secondScreen = new Intent(getApplicationContext(), SecondScreenA.class);
                 secondScreen.putExtra("etPlace", etPlace.getText().toString());
                 secondScreen.putExtra("etDish", etDish.getSelectedItem().toString());
                 startActivity(secondScreen);
@@ -67,6 +68,18 @@ public class EkranGlowny extends Activity implements LocationListener {
             }
 
         });
+
+        //DO naprawy
+  /*      btnNearest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent secondScreen = new Intent(getApplicationContext(), SecondScreenB.class);
+                startActivity(secondScreen);
+                finish();
+            }
+
+        });
+*/
 // przy włączeniu aplikacji odrazu pobierane są współrzedne
         kr = new Criteria();
         lm = (LocationManager) getSystemService(LOCATION_SERVICE);

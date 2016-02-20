@@ -4,6 +4,7 @@
     <string name="etPlace">Miejscowość</string>
     <string name="etDish">Danie</string>
     <string name="btnSearch">Wyszukaj</string>
+    <string name="btnNearest">Najbliższy Lokal</string>
 
     <string-array name="meal_array">QQQ
         <item>Burger</item>

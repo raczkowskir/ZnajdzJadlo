@@ -2,18 +2,14 @@ package pl.krzysiek.android.znajdzjadlo;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 
-public class SecondScreen extends Activity {
+public class SecondScreenA extends Activity {
 
     private ImageButton ibtnBack; //definicja przycisku graficznego
     private WebView wvResults; //definicja pokazania wynikow
@@ -21,7 +17,7 @@ public class SecondScreen extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second_screen);
+        setContentView(R.layout.activity_second_screen_a);
 
         ibtnBack = (ImageButton) findViewById(R.id.ibtnBack);
 
@@ -29,7 +25,7 @@ public class SecondScreen extends Activity {
         ibtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SecondScreen.this, EkranGlowny.class));
+                startActivity(new Intent(SecondScreenA.this, EkranGlowny.class));
                 finish();
             }
         });

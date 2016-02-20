@@ -24,7 +24,7 @@ public class ThirdScreen extends Activity {
         ibtnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ThirdScreen.this, SecondScreen.class);
+                Intent intent = new Intent(ThirdScreen.this, SecondScreenA.class);
                 finish();
             }
         });
