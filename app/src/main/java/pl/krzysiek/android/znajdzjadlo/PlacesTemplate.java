@@ -11,27 +11,27 @@ public class PlacesTemplate {
     int liLok = 3;
 
     //tablice opisujace poszczegolne lokale
-    private String[] nazwy = new String[liLok];
-    private String[] telefony = new String[liLok];
-    private String[] adresy = new String[liLok];
+    String[] nazwy = new String[liLok];
+    String[] telefony = new String[liLok];
+    String[] adresy = new String[liLok];
 
     //tablice zawierajace współrzędne geograficzne lokali i sumeRóżnic - czyli odleflosć do najbliższego lokalu
-    private double[] dlugosci = new double[liLok];
-    private double[] szerokosci = new double[liLok];
-    private double[] sumaZRoznic = new double[liLok];
+     double[] dlugosci = new double[liLok];
+     double[] szerokosci = new double[liLok];
+     double[] sumaZRoznic = new double[liLok];
 
     //współrzedne miejsca w którym sie znajdujemy
-    private double naszPunktDl;
-    private double naszPunktSzer;
+     double naszPunktDl;
+     double naszPunktSzer;
     //zmienne do obliczenia, ktory lokal jest najblizej nas
-    private double roznicaDl;
-    private double roznicaSzer;
-    private double najmniejszaOdl = 1000;
+     double roznicaDl;
+     double roznicaSzer;
+     double najmniejszaOdl = 1000;
     //zmienna wskazujaca na pozycje w tablicach zajmowana przez najblizszy lokal
-    private int numerKomorki;
+     int numerKomorki;
 
     //metoda obliczajaca odleglosci
-    private void obliczRoznice() {
+     void obliczRoznice() {
         for (int i = 0; i < liLok; i++) {
             roznicaDl = Math.abs(naszPunktDl - dlugosci[i]);
             roznicaSzer = Math.abs(naszPunktSzer - szerokosci[i]);
