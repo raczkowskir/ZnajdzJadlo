@@ -12,60 +12,59 @@
         android:id="@+id/ibtnBack"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:src="@drawable/gora"
-        android:scaleType="fitXY"
         android:adjustViewBounds="true"
+        android:onClick="backToMain"
         android:padding="1dp"
-        android:onClick="backToMain"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/gora" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Zaprasza lokal:"
         android:id="@+id/nazwaTytul"
-        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/ibtnBack"
-        />
+        android:layout_centerHorizontal="true"
+        android:text="Zaprasza lokal:" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
         android:id="@+id/nazwa"
-        android:layout_below="@+id/nazwaTytul"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adres"
+        android:layout_below="@+id/nazwaTytul"
+        android:layout_centerHorizontal="true"
+        android:text="0" />
+
+    <TextView
         android:id="@+id/adresTytul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/nazwa"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp" />
+        android:layout_marginTop="44dp"
+        android:text="Adres" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
         android:id="@+id/adres"
-        android:layout_below="@+id/adresTytul"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="telefon"
+        android:layout_below="@+id/adresTytul"
+        android:layout_centerHorizontal="true"
+        android:text="0" />
+
+    <TextView
         android:id="@+id/telefonTytul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/adres"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="63dp" />
+        android:layout_marginTop="63dp"
+        android:text="telefon" />
 
     <TextView
+        android:id="@+id/telefon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:id="@+id/telefon"
         android:layout_below="@+id/telefonTytul"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="0" />
 </RelativeLayout>

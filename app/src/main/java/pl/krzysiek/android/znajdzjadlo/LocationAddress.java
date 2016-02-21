@@ -7,15 +7,17 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
 public class LocationAddress {
 
-// string potrzebny do debugowania
+    // string potrzebny do debugowania
     private static final String TAG = "LocationAddress";
-//metoda zamieniajaca współrzedne na nazwe miejscowości
+
+    //metoda zamieniajaca współrzedne na nazwe miejscowości
     public static void getAddressFromLocation(final double latitude, final double longitude,
                                               final Context context, final Handler handler) {
 // nowy watek

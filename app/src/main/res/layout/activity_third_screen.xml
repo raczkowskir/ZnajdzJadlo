@@ -7,11 +7,11 @@
         android:id="@+id/ibtnReturn"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:src="@drawable/gora"
-        android:scaleType="fitXY"
         android:adjustViewBounds="true"
+        android:onClick="returnToPrevious"
         android:padding="1dp"
-        android:onClick="returnToPrevious"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/gora" />
 
     <WebView
         android:id="@+id/wvSelected"

@@ -15,9 +15,9 @@ import android.widget.TextView;
 public class SecondScreenB extends Activity {
 
     private ImageButton ibtnBack; //definicja przycisku graficznego
-    private TextView nazwa, adres,telefon;
+    private TextView nazwa, adres, telefon; // text view na ktorych bedziemy wyswietlac dane wybranego lokalu
     PlacesObjects lokale = new PlacesObjects(); //obiekt ktory dostosuje sie do dania ktore wybralismy
-    PlacesTemplate wybranyLokal;
+    PlacesTemplate wybranyLokal; //obiekt szablon - który zostaje zapełniony za pomoca obiektu typu PlacesObject
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,20 +41,24 @@ public class SecondScreenB extends Activity {
         Intent intent = getIntent();
         String danie = intent.getStringExtra("etDish"); //odebranie danych z edit text
 
-
+        //podanie naszych wspolrzednych do obiektu typu PlacesObject
         lokale.naszPunktDl(EkranGlowny.dlugosc);
         lokale.setNaszPunktSzer(EkranGlowny.szerokosc);
+
+        //sprawdzenie jakie danie zostalo wybrane i odpowiednie zapelnienie danymi obiekty typu PlacesTemplate
         if (danie.equals("Burger")) {
             lokale.setBurger();
             wybranyLokal = lokale.getBurger();
             int nrKomorki = wybranyLokal.wskazLokal();
 
             //te trzy linie bedzie mozna wyciagnac poza "if-a" - ale dopiero po zaimplementowaniu wiekszej ilosci obiektow klasy PlacesTemplate
+            //przypisanie danych lokalu do odpowiednich textView
             nazwa.setText(wybranyLokal.nazwy[nrKomorki]);
             adres.setText(wybranyLokal.adresy[nrKomorki]);
             telefon.setText(wybranyLokal.telefony[nrKomorki]);
         }
-        else{
+        //jezeli dla danego dania nie sa zaimplementowane dane lokali zostanie wyswietlony komunikat
+        else {
             nazwa.setText("Jesteś na Marsie !");
             adres.setText("Jesteś na Marsie !");
             telefon.setText("Jesteś na Marsie !");

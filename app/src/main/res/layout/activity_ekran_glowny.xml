@@ -6,62 +6,62 @@
         android:id="@+id/ivLogo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
         android:adjustViewBounds="true"
-        android:src="@drawable/image3"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/image3" />
 
     <EditText
+        android:id="@+id/etPlace"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:background="#eeeeee"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        android:paddingLeft="15dp"
-        android:textColorHint="#bdbdbd"
-        android:hint="@string/etPlace"
-        android:id="@+id/etPlace"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:background="#eeeeee"
+        android:hint="@string/etPlace"
+        android:paddingLeft="15dp"
+        android:textAllCaps="false"
+        android:textColorHint="#bdbdbd"
+        android:textSize="20sp" />
 
     <Spinner
+        android:id="@+id/etDish"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:background="#eeeeee"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-
-        android:paddingLeft="15dp"
-
-        android:id="@+id/etDish"
-        android:layout_below="@+id/etPlace"
         android:layout_alignLeft="@+id/etPlace"
         android:layout_alignStart="@+id/etPlace"
-        android:layout_marginTop="10dp" />
+
+        android:layout_below="@+id/etPlace"
+
+        android:layout_marginTop="10dp"
+        android:background="#eeeeee"
+        android:paddingLeft="15dp"
+        android:textAllCaps="false"
+        android:textSize="20sp" />
 
     <Button
+        android:id="@+id/btnSearch"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:id="@+id/btnSearch"
-        android:background="@drawable/button_custom"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        android:text="@string/btnSearch"
         android:layout_below="@+id/etDish"
         android:layout_centerInParent="true"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:background="@drawable/button_custom"
+        android:text="@string/btnSearch"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
     <Button
+        android:id="@+id/btnNearest"
         android:layout_width="250dp"
         android:layout_height="50dp"
-        android:id="@+id/btnNearest"
-        android:background="@drawable/button_custom"
-        android:textColor="#ffffff"
-        android:textSize="20sp"
-        android:text="@string/btnNearest"
         android:layout_below="@+id/btnSearch"
         android:layout_centerInParent="true"
+        android:layout_marginBottom="15dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"/>
-
+        android:background="@drawable/button_custom"
+        android:text="@string/btnNearest"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
 
 
 </RelativeLayout>

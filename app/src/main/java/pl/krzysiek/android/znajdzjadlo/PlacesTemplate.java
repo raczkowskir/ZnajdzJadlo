@@ -1,7 +1,7 @@
 package pl.krzysiek.android.znajdzjadlo;
 
 public class PlacesTemplate {
-
+    //konstruktor wymagajacy podania naszych wspolrzednych
     public PlacesTemplate(double naszPunktDl, double naszPunktSzer) {
         this.naszPunktDl = naszPunktDl;
         this.naszPunktSzer = naszPunktSzer;
@@ -16,22 +16,22 @@ public class PlacesTemplate {
     String[] adresy = new String[liLok];
 
     //tablice zawierajace współrzędne geograficzne lokali i sumeRóżnic - czyli odleflosć do najbliższego lokalu
-     double[] dlugosci = new double[liLok];
-     double[] szerokosci = new double[liLok];
-     double[] sumaZRoznic = new double[liLok];
+    double[] dlugosci = new double[liLok];
+    double[] szerokosci = new double[liLok];
+    double[] sumaZRoznic = new double[liLok];
 
     //współrzedne miejsca w którym sie znajdujemy
-     double naszPunktDl;
-     double naszPunktSzer;
+    double naszPunktDl;
+    double naszPunktSzer;
     //zmienne do obliczenia, ktory lokal jest najblizej nas
-     double roznicaDl;
-     double roznicaSzer;
-     double najmniejszaOdl = 1000;
+    double roznicaDl;
+    double roznicaSzer;
+    double najmniejszaOdl = 1000;
     //zmienna wskazujaca na pozycje w tablicach zajmowana przez najblizszy lokal
-     int numerKomorki;
+    int numerKomorki;
 
     //metoda obliczajaca odleglosci
-     void obliczRoznice() {
+    void obliczRoznice() {
         for (int i = 0; i < liLok; i++) {
             roznicaDl = Math.abs(naszPunktDl - dlugosci[i]);
             roznicaSzer = Math.abs(naszPunktSzer - szerokosci[i]);

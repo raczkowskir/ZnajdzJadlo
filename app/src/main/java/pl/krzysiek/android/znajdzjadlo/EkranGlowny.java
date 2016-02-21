@@ -21,8 +21,8 @@ public class EkranGlowny extends Activity implements LocationListener {
     public static double dlugosc;
     public static double szerokosc;
 
-    private Button btnSearch; //definicja buttona
-    private Button btnNearest;
+    private Button btnSearch; //definicja buttona -szukanie w google
+    private Button btnNearest; // - wyswietlenie danych najblizszego lokalu z wybranym przez nas daniem
     private EditText etPlace; //definicja edit text miejscowosc
     private Spinner etDish; //definicja Spinner danie
 
@@ -57,11 +57,7 @@ public class EkranGlowny extends Activity implements LocationListener {
         // ustawienie adaptera dla spinnera
         etDish.setAdapter(staticAdapter);
 
-        //zmienna statyczna danie - przypisanie wartosci USUNAC !!!
-   //     danie = etDish.getSelectedItem().toString();
-
         btnSearch = (Button) findViewById(R.id.btnSearch);
-
         //metoda pobierajaca dane z edit textow i wysylajaca dane do ekranu drugiego
         btnSearch.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,9 +71,8 @@ public class EkranGlowny extends Activity implements LocationListener {
 
         });
 
-        //DO naprawy
         btnNearest = (Button) findViewById(R.id.btnNearest);
-
+        // metoda przenoszaca nas do nastepnego ekranu (najblizszy lokal)z przekazaniem dania ktore wybralismy
         btnNearest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,19 +83,7 @@ public class EkranGlowny extends Activity implements LocationListener {
             }
 
         });
-        /*
-        ibtnBack = (ImageButton) findViewById(R.id.ibtnBack);
 
-        //metoda cofaj�ca do ekranu glownego
-        ibtnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(SecondScreenA.this, EkranGlowny.class));
-                finish();
-            }
-
-        });
-        */
 // przy włączeniu aplikacji odrazu pobierane są współrzedne
         kr = new Criteria();
         lm = (LocationManager) getSystemService(LOCATION_SERVICE);
@@ -108,20 +91,19 @@ public class EkranGlowny extends Activity implements LocationListener {
         lm.requestLocationUpdates(najlepszyDostawca, 1000, 1, this);
 
 //program wyrzuci wyjatek jezeli z jakiegos powodu nie bedzie mozliwe podanie naszej lokalizacji
-try {
+        try {
 //tworzony jest obiekt klasy LocationAddress ktora odpowiada za zamiane współrzednych GPS na nazwe miejscowości
-    LocationAddress locationAddress = new LocationAddress();
-    locationAddress.getAddressFromLocation(loc.getLatitude(), loc.getLongitude(),
-            getApplicationContext(), new GeocoderHandler());
-    //do debugowania - usunac
-    System.out.println("Jak to sie wyswietla to jest git !!!" + loc.getLatitude()+ loc.getLongitude());
-    //zmienne statyczne -  przypisanie
-    dlugosc = loc.getLongitude();
-    szerokosc = loc.getLatitude();
-}
-catch (NullPointerException a){
-    System.out.println("Cos sie wysypalo");
-}
+            LocationAddress locationAddress = new LocationAddress();
+            locationAddress.getAddressFromLocation(loc.getLatitude(), loc.getLongitude(),
+                    getApplicationContext(), new GeocoderHandler());
+            //do debugowania - usunac
+            System.out.println("Jak to sie wyswietla to jest git !!!" + loc.getLatitude() + loc.getLongitude());
+            //zmienne statyczne -  przypisanie
+            dlugosc = loc.getLongitude();
+            szerokosc = loc.getLatitude();
+        } catch (NullPointerException a) {
+            System.out.println("Cos sie wysypalo");
+        }
     }
 
     // metody wymagane przez interface: LocationListener
