@@ -4,15 +4,20 @@ import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 
 public class SecondScreenB extends Activity {
 
     private ImageButton ibtnBack; //definicja przycisku graficznego
+    private TextView nazwa, adres,telefon;
+    PlacesObjects lokale = new PlacesObjects(); //obiekt ktory dostosuje sie do dania ktore wybralismy
+    PlacesTemplate wybranyLokal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,9 @@ public class SecondScreenB extends Activity {
         setContentView(R.layout.activity_second_screen_b);
 
         ibtnBack = (ImageButton) findViewById(R.id.ibtnBack);
+        nazwa = (TextView) findViewById(R.id.nazwa);
+        adres = (TextView) findViewById(R.id.adres);
+        telefon = (TextView) findViewById(R.id.telefon);
 
         //metoda cofaj�ca do ekranu glownego
         ibtnBack.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +37,29 @@ public class SecondScreenB extends Activity {
                 finish();
             }
         });
+
+        Intent intent = getIntent();
+        String danie = intent.getStringExtra("etDish"); //odebranie danych z edit text
+
+
+        lokale.naszPunktDl(EkranGlowny.dlugosc);
+        lokale.setNaszPunktSzer(EkranGlowny.szerokosc);
+        if (danie.equals("Burger")) {
+            lokale.setBurger();
+            wybranyLokal = lokale.getBurger();
+            int nrKomorki = wybranyLokal.wskazLokal();
+
+            //te trzy linie bedzie mozna wyciagnac poza "if-a" - ale dopiero po zaimplementowaniu wiekszej ilosci obiektow klasy PlacesTemplate
+            nazwa.setText(wybranyLokal.nazwy[nrKomorki]);
+            adres.setText(wybranyLokal.adresy[nrKomorki]);
+            telefon.setText(wybranyLokal.telefony[nrKomorki]);
+        }
+        else{
+            nazwa.setText("Jesteś na Marsie !");
+            adres.setText("Jesteś na Marsie !");
+            telefon.setText("Jesteś na Marsie !");
+        }
+
     }
 
 

@@ -40,7 +40,7 @@ public class PlacesTemplate {
     }
 
     //metoda wskazujaca pozycje w tablicach zajmowana przez najblizszy lokal
-    private int wskazLokal() {
+    int wskazLokal() {
         for (int i = 0; i < liLok; i++) {
             if (sumaZRoznic[i] <= najmniejszaOdl) {
                 najmniejszaOdl = sumaZRoznic[i];

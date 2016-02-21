@@ -17,11 +17,14 @@ import android.os.Message;
 
 public class EkranGlowny extends Activity implements LocationListener {
 
+    //zmienne statyczne które zostana użyte w klasie SecondScreenB jako parametry obiektow klasy Places
+    public static double dlugosc;
+    public static double szerokosc;
 
     private Button btnSearch; //definicja buttona
     private Button btnNearest;
     private EditText etPlace; //definicja edit text miejscowosc
-    private Spinner etDish; //definicja edit text danie
+    private Spinner etDish; //definicja Spinner danie
 
     LocationManager lm; // obiekt opisujacy dostawce wspórzednych ( w naszym przypadku - network)
     Criteria kr; //obiekt odpowiadajacy za kryteria wyboru dostawcy, np. dokladność pomiaru, darmowość
@@ -54,6 +57,9 @@ public class EkranGlowny extends Activity implements LocationListener {
         // ustawienie adaptera dla spinnera
         etDish.setAdapter(staticAdapter);
 
+        //zmienna statyczna danie - przypisanie wartosci USUNAC !!!
+   //     danie = etDish.getSelectedItem().toString();
+
         btnSearch = (Button) findViewById(R.id.btnSearch);
 
         //metoda pobierajaca dane z edit textow i wysylajaca dane do ekranu drugiego
@@ -76,6 +82,7 @@ public class EkranGlowny extends Activity implements LocationListener {
             @Override
             public void onClick(View view) {
                 Intent secondScreen = new Intent(getApplicationContext(), SecondScreenB.class);
+                secondScreen.putExtra("etDish", etDish.getSelectedItem().toString());
                 startActivity(secondScreen);
                 finish();
             }
@@ -108,6 +115,9 @@ try {
             getApplicationContext(), new GeocoderHandler());
     //do debugowania - usunac
     System.out.println("Jak to sie wyswietla to jest git !!!" + loc.getLatitude()+ loc.getLongitude());
+    //zmienne statyczne -  przypisanie
+    dlugosc = loc.getLongitude();
+    szerokosc = loc.getLatitude();
 }
 catch (NullPointerException a){
     System.out.println("Cos sie wysypalo");

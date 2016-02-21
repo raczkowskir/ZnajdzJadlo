@@ -11,6 +11,7 @@ public class PlacesObjects {
     public PlacesTemplate getBurger() {
         return burger;
     }
+
     //metoda ustawiajaca nasza aktualna dlugosc geograficzna
     public void naszPunktDl(double naszPunktDl) {
         this.naszPunktDl = naszPunktDl;
@@ -33,12 +34,12 @@ public class PlacesObjects {
         burger.telefony[1] ="71 386 18 70";
         burger.telefony[2] ="733 530 917";
 
-        burger.dlugosci[0]= 17.03537717;
-        burger.dlugosci[1]= 17.03537717;
+        burger.dlugosci[0]= 17.03621938;
+        burger.dlugosci[1]= 17.03208342;
         burger.dlugosci[2]= 17.03537717;
 
-        burger.szerokosci[0]=51.11132033;
-        burger.szerokosci[1]=51.10755494;
+        burger.szerokosci[0]=51.09888799;
+        burger.szerokosci[1]=51.10756841;
         burger.szerokosci[2]=51.11132033;
 
         burger.obliczRoznice();
