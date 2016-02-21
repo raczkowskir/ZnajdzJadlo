@@ -1,48 +1,71 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="pl.krzysiek.android.znajdzjadlo.SecondScreenB">
+
+    <ImageButton
+        android:id="@+id/ibtnBack"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:src="@drawable/gora"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:padding="1dp"
+        android:onClick="backToMain"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Zaprasza Restauracja:"
+        android:text="Zaprasza lokal:"
         android:id="@+id/nazwaTytul"
-        android:layout_gravity="center_horizontal" />
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/ibtnBack"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
         android:id="@+id/nazwa"
-        android:layout_gravity="center_horizontal" />
+        android:layout_below="@+id/nazwaTytul"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adres:"
+        android:text="Adres"
         android:id="@+id/adresTytul"
-        android:layout_gravity="center_horizontal" />
+        android:layout_below="@+id/nazwa"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
         android:id="@+id/adres"
-        android:layout_gravity="center_horizontal" />
+        android:layout_below="@+id/adresTytul"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Telefon:"
+        android:text="telefon"
         android:id="@+id/telefonTytul"
-        android:layout_gravity="center_horizontal" />
+        android:layout_below="@+id/adres"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
         android:id="@+id/telefon"
-        android:layout_gravity="center_horizontal" />
-</LinearLayout>
+        android:layout_below="@+id/telefonTytul"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>

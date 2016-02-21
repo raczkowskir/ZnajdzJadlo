@@ -19,5 +19,8 @@
         <item>Spaghetti</item>
         <item>Zupa</item>
     </string-array>
+    <string name="title_activity_second_screen_b">SecondScreenB</string>
+
+    <string name="hello_world">Hello world!</string>
 
 </resources>

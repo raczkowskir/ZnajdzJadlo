@@ -70,7 +70,9 @@ public class EkranGlowny extends Activity implements LocationListener {
         });
 
         //DO naprawy
-  /*      btnNearest.setOnClickListener(new View.OnClickListener() {
+        btnNearest = (Button) findViewById(R.id.btnNearest);
+
+        btnNearest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent secondScreen = new Intent(getApplicationContext(), SecondScreenB.class);
@@ -79,7 +81,19 @@ public class EkranGlowny extends Activity implements LocationListener {
             }
 
         });
-*/
+        /*
+        ibtnBack = (ImageButton) findViewById(R.id.ibtnBack);
+
+        //metoda cofaj�ca do ekranu glownego
+        ibtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SecondScreenA.this, EkranGlowny.class));
+                finish();
+            }
+
+        });
+        */
 // przy włączeniu aplikacji odrazu pobierane są współrzedne
         kr = new Criteria();
         lm = (LocationManager) getSystemService(LOCATION_SERVICE);
